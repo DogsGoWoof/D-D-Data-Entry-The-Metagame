@@ -10,6 +10,7 @@ const MongoStore = require("connect-mongo");
 const app = express();
 const port = process.env.PORT ? process.env.PORT : "3000";
 const authController = require("./controllers/auth.js");
+const charactersController = require('./controllers/characters.js');
 const isSignedIn = require("./middleware/is-signed-in.js");
 const passUserToView = require("./middleware/pass-user-to-view.js");
 
@@ -33,7 +34,7 @@ app.use(
 app.use(passUserToView);
 app.use("/auth", authController);
 app.use(isSignedIn);
-// app.use('/users/:userId/characters', charactersController);
+app.use('/users/:userId/characters', charactersController);
 
 app.get("/", (req, res) => {
     res.render("index.ejs");
