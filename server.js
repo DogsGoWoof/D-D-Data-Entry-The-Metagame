@@ -32,6 +32,8 @@ app.use(
 );
 app.use(passUserToView);
 app.use("/auth", authController);
+app.use(isSignedIn);
+// app.use('/users/:userId/characters', charactersController);
 
 app.get("/", (req, res) => {
     res.render("index.ejs");
