@@ -40,13 +40,13 @@ app.use(
 app.use(passUserToView);
 
 app.get('/', async (req, res) => {
-    const user = await User.findOne(req.session.user);
-    req.session.user._id = user._id;
-    console.log(req.session.user._id);
     // console.log(user);
     // Check if the user is logged in
     if (req.session.user) {
         // Redirect logged-in users to their applications index
+        const user = await User.findOne(req.session.user);
+        req.session.user._id = user._id;
+        console.log(req.session.user._id);
         res.redirect(`/users/${req.session.user._id}/characters`);
     } else {
         // Show the homepage for users who are not logged in

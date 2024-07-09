@@ -5,9 +5,10 @@ const User = require('../models/user.js');
 
 router.get('/', async (req, res) => {
     try {
-        const currentUser = await User.findOne(req.session.user);
+        // const currentUser = await User.findOne(req.session.user);
+        const currentUser = await User.findById(req.session.user._id);
         res.render('characters/index.ejs', {
-            user: currentUser, // res.local.user only contains username key-value object
+            // user: currentUser, // res.local.user only contains username key-value object
                                 // findOne async necessary to retrieve and use _id property of user
             characters: currentUser.characters,
         });
@@ -20,7 +21,7 @@ router.get('/', async (req, res) => {
 
 router.post('/', async (req, res) => {
     try {
-        const currentUser = await User.findOne(req.session.user);
+        const currentUser = await User.findById(req.session.user._id);
         currentUser.characters.push(req.body);
         await currentUser.save();
         res.redirect(`/users/${currentUser._id}/characters`);

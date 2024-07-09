@@ -6,13 +6,6 @@
         <%- include('../partials/_navbar.ejs') %>
         <h1><%= character.name %></h1>
         <div class="content-container">
-            <!-- <% for (const [key, value] of Object.entries(character)) { %>
-                <p><%= JSON.stringify(value) %></p>
-            <% } %> -->
-            <!-- <%= JSON.stringify(character) %> -->
-            <!-- <% for (const item in character) { %>
-                <%= item %>
-            <% } %> -->
             <% if (character.image) { %>
                 <%= character.image %>
             <% } else { %>
