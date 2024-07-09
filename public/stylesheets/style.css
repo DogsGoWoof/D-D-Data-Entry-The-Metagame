@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Baskervville+SC&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    border-radius: .5dvh;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column wrap;
+    font-family: "Baskervville SC", system-ui;
+    background: url("../assets/images/1 - Ax3bOZi.png") no-repeat;
+    background-size: 100dvw;
+}
+
+nav {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    border: 1dvh ridge crimson;
+    padding: 1dvh;
+    background: #dddddd;
+    font-weight: bold;
+    width: 50dvw;
+    margin-top: 2dvh;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+.header-one {
+    margin: 20dvh 0 0 0;
+    text-align: center;
+}
+
+#subline {
+    align-self: center;
+    margin-bottom: 1dvh;
+}
+
+#intro {
+    align-self: center;
+    font-weight: bold;
+    margin-top: 6dvh;
+}
+
+#content-container-top {
+    align-self: center;
+    background: #dddddddd;
+    padding: 1dvh;
+    font-weight: bold;
+    margin: 5dvh 0 0 0;
+    padding: 2dvh 4dvh;
+}

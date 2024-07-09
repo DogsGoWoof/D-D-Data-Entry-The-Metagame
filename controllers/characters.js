@@ -5,11 +5,8 @@ const User = require('../models/user.js');
 
 router.get('/', async (req, res) => {
     try {
-        // const currentUser = await User.findOne(req.session.user);
         const currentUser = await User.findById(req.session.user._id);
         res.render('characters/index.ejs', {
-            // user: currentUser, // res.local.user only contains username key-value object
-                                // findOne async necessary to retrieve and use _id property of user
             characters: currentUser.characters,
         });
         // res.render('characters/index.ejs');
@@ -32,15 +29,13 @@ router.post('/', async (req, res) => {
 });
 
 router.get('/new', async (req, res) => {
-    const currentUser = await User.findOne(req.session.user);
-    res.render('characters/new.ejs', {
-        user: currentUser,
-    });
+    // const currentUser = await User.findById(req.session.user._id);
+    res.render('characters/new.ejs');
 });
 
 router.get('/:characterId', async (req, res) => {
     try {
-        const currentUser = await User.findOne(req.session.user);
+        const currentUser = await User.findById(req.session.user._id);
         const character = currentUser.characters.id(req.params.characterId);
         res.render('characters/show.ejs', {
             character: character,
@@ -53,7 +48,7 @@ router.get('/:characterId', async (req, res) => {
 
 router.delete('/:characterId', async (req, res) => {
     try {
-        const currentUser = await User.findOne(req.session.user);
+        const currentUser = await User.findById(req.session.user._id);
         currentUser.characters.id(req.params.characterId).deleteOne();
         await currentUser.save();
         res.redirect(`/users/${currentUser._id}/characters`);
@@ -65,7 +60,7 @@ router.delete('/:characterId', async (req, res) => {
 
 router.get('/:characterId/edit', async (req, res) => {
     try {
-        const currentUser = await User.findOne(req.session.user);
+        const currentUser = await User.findById(req.session.user._id);
         const character = currentUser.characters.id(req.params.characterId);
         res.render('characters/edit.ejs', {
             character: character,
@@ -78,7 +73,7 @@ router.get('/:characterId/edit', async (req, res) => {
 
 router.put('/:characterId', async (req, res) => {
     try {
-        const currentUser = await User.findOne(req.session.user);
+        const currentUser = await User.findById(req.session.user._id);
         const character = currentUser.characters.id(req.params.characterId);
         character.set(req.body);
         await currentUser.save();

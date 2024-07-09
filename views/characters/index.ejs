@@ -1,12 +1,13 @@
 <%- include('../partials/_html-head.ejs') %>
-    <title>Characters</title>
+        <link rel="stylesheet" href="/stylesheets/style.css">
+        <title>Characters</title>
     </head>
 
     <body>
         <%- include('../partials/_navbar.ejs') %>
-        <div>
+        <h1 class="header-one"><%= user.username %>'s Characters</h1>
+        <div id="content-container-top">
             <div>
-                <h1><%= user.username %>'s Characters</h1>
                 <a href="/users/<%= user._id %>/characters/new">Create Character</a>
             </div>
             <ul>

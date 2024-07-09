@@ -1,20 +1,22 @@
 <%- include('../partials/_html-head.ejs') %>
+        <link rel="stylesheet" href="/stylesheets/style.css">
         <title>Users</title>
     </head>
 
         <%- include('../partials/_navbar.ejs') %>
-        <h1>Users</h1>
-        <ul class="user-list">
-        <% users.forEach((user) => { %>
-            <a href="/users/<%= user._id %>/roster">
-                <div class="user">
-                    <li>
-                        <p id="usernames"><%= user.username %></p>
-                    </li>
-                </div>
-        <% }); %>
-        </ul>
-
+        <h1 class="header-one">Users</h1>
+        <div id="content-container-top">
+            <ul class="user-list">
+            <% users.forEach((user) => { %>
+                <a href="/users/<%= user._id %>/roster">
+                    <div class="user">
+                        <li>
+                            <p id="usernames"><%= user.username %></p>
+                        </li>
+                    </div>
+            <% }); %>
+            </ul>
+        </div>
     </body>
 
 </html>
