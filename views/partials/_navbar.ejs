@@ -1,5 +1,12 @@
 <nav>
-    <a href="/">🧠Home</a>
-    <a href="/thoughts">💭Thoughts</a>
-    <a href="/thoughts/new">💡New Thought</a>
+    <a href="/">&#x1F3E0 Home</a>
+    <% if (user) { %>
+        <a href="/users/<%= user._id %>/characters">&#x1F9D9 Characters</a>
+        <a href="/auth/sign-out">&#x1F3C3 Sign Out</a>
+    <% } else { %>
+        <a href="/auth/sign-in">&#x1F978 Sign In</a>
+        <a href="/auth/sign-up">&#x270D Sign Up</a>
+    <% } %>
+    <a href="/users">&#x1F9D4 Users</a>
+    <a href="/test">test page</a>
 </nav>

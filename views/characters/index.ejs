@@ -1,0 +1,25 @@
+<%- include('../partials/_html-head.ejs') %>
+    <title>Characters</title>
+    </head>
+
+    <body>
+        <%- include('../partials/_navbar.ejs') %>
+        <div>
+            <div>
+                <h1><%= user.username %>'s Characters</h1>
+                <a href="/users/<%= user._id %>/characters/new">Create Character</a>
+            </div>
+            <ul>
+                <% characters.forEach((character)=>{ %>
+                    <a href="/users/<%= user._id %>/characters/<%= character._id %>">
+                        <li>
+                            <%= character.name %>
+                            <%= character.level %>
+                        </li>
+                    </a>
+                <% }) %>
+            </ul>
+        </div>
+    </body>
+
+</html>

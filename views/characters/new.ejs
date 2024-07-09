@@ -1,0 +1,33 @@
+<%- include('../partials/_html-head.ejs') %>
+    <title>New Character</title>
+    </head>
+
+    <body>
+        <%- include('../partials/_navbar.ejs') %>
+        <h1>New Character</h1>
+        <div class="content-container">
+            <form action="/users/<%= user._id %>/characters" method="POST">
+                <label for="name">Name: </label>
+                <input type="text" name="name" id="name" required />
+                <label for="class">Class: </label>
+                <input type="text" name="class" id="class" required />
+                <label for="level">Level: </label>
+                <input type="number" name="level" id="level" required />
+                <label for="background">Background: </label>
+                <input type="text" name="background" id="background" required />
+                <label for="race">Race: </label>
+                <input type="text" name="race" id="race" required />
+                <label for="alignment">Alignment: </label>
+                <input type="text" name="alignment" id="alignment" required />
+                <label for="experience">Experience: </label>
+                <input type="number" name="experience" id="experience" />
+                <label for="image">Background: </label>
+                <input type="text" name="image" id="image" />
+                <label for="notes">Notes: </label>
+                <textarea name="notes" id="notes"></textarea>
+                <button type="submit"><div class="link-div">Add</div></button>
+            </form>
+        </div>
+    </body>
+
+</html>

@@ -1,0 +1,37 @@
+<%- include('../partials/_html-head.ejs') %>
+    <title>New Character</title>
+    </head>
+
+    <body>
+        <%- include('../partials/_navbar.ejs') %>
+        <h1><%= character.name %></h1>
+        <div class="content-container">
+            <!-- <% for (const [key, value] of Object.entries(character)) { %>
+                <p><%= JSON.stringify(value) %></p>
+            <% } %> -->
+            <!-- <%= JSON.stringify(character) %> -->
+            <!-- <% for (const item in character) { %>
+                <%= item %>
+            <% } %> -->
+            <% if (character.image) { %>
+                <%= character.image %>
+            <% } else { %>
+                >>placeholder<<
+            <% } %>
+            <div><%= character.class %></div>
+            <div><%= character.race %></div>
+            <div><%= character.alignment %></div>
+            <div><%= character.level %></div>
+            <div><%= character.background %></div>
+            <div><%= character.experience %></div>
+            <div><%= character.notes %></iv>
+        </div> 
+        <div class="show-actions">
+            <a href="/users/<%= user._id %>/characters/<%= character._id %>/edit">Edit Character</a>
+            <form action="/users/<%= user._id %>/characters/<%= character._id %>?_method=DELETE" method="POST">
+                <button type="submit">Delete Character</button>
+            </form>
+        </div>
+    </body>
+
+</html>
