@@ -21,6 +21,9 @@ nav {
     justify-content: space-evenly;
     align-items: center;
     border: 1dvh ridge crimson;
+    border-top: .1dvh ridge peru;
+    border-bottom: .1dvh ridge peru;
+    border-radius: 100dvh;
     padding: 1dvh;
     background: #dddddd;
     font-weight: bold;
@@ -56,4 +59,35 @@ a {
     font-weight: bold;
     margin: 5dvh 0 0 0;
     padding: 2dvh 4dvh;
+}
+
+#sign {
+    display: flex;
+    align-content: end;
+    flex-flow: column wrap;
+    margin: 3dvh 0;
+    height: 50dvh;
+    padding: 0dvh 10dvw;
+}
+
+.sign-form {
+    margin: 3dvh 0;
+}
+
+button {
+    margin: 0 auto;
+    display: block;
+}
+
+button:hover {
+    filter: brightness(90%);
+}
+
+input {
+    background: #DEE5FF;
+    float: right;
+}
+
+label {
+    margin-right: .5dvw;
 }
