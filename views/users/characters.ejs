@@ -1,0 +1,18 @@
+<%- include('../partials/_html-head.ejs') %>
+        <title><%= user.username %>'s Roster</title>
+    </head>
+
+        <%- include('../partials/_navbar.ejs') %>
+        <h1><%= user.username %></h1>
+        <ul>
+        <% user.characters.forEach((character) => { %>
+            <div class="character-card">
+                <li class="text">
+                    <%= character.name %>
+                </li>
+            </div>
+        <% }); %>
+
+    </body>
+
+</html>

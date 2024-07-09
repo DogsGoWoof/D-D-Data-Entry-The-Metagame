@@ -16,6 +16,7 @@ const passUserToView = require("./middleware/pass-user-to-view.js");
 
 const authController = require("./controllers/auth.js");
 const charactersController = require('./controllers/characters.js');
+const usersController = require('./controllers/users.js');
 
 const User = require("./models/user.js");
 
@@ -80,6 +81,8 @@ app.get('/test', async (req, res) => {
 app.use("/auth", authController);
 app.use(isSignedIn);
 app.use('/users/:userId/characters', charactersController);
+app.use('/users/', usersController);
+app.use('/users/:userId/roster', usersController);
 
 app.listen(port, () => {
     console.log(`The express app is ready on port ${port}!`);
