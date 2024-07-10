@@ -115,6 +115,17 @@ input:focus {
     background: white;
 }
 
+textarea {
+    background: #DEE5FF;
+    float: right;
+    padding: 1dvh .5dvw;
+    font-weight: bold;
+}
+
+textarea:focus {
+    background: white;
+}
+
 label {
     margin-right: .5dvw;
 }
@@ -158,13 +169,14 @@ label {
     translate: 0 -1dvh;
     cursor: none;
 }
+
 ul {
     display: flex;
     justify-content: space-between;
     list-style-type: upper-roman;
 }
 
-.character-li {
+li {
     margin-right: 8dvh;
     border: .4dvh groove #039f03;
     border-top: none;
@@ -173,9 +185,9 @@ ul {
     border-radius: 5dvh;
 }
 
-.character-li:hover {
+li:hover {
     background: conic-gradient(from -135deg at 50% 50%, #D1E9D0, #a77f30);
-    filter: drop-shadow(0 0 .5dvh #000000);
+    filter: drop-shadow(0 0 2dvh white);
 }
 
 #create-div {
@@ -184,7 +196,7 @@ ul {
 }
 
 #create-link {
-    border: .5dvh ridge lightblue;
+    border: .5dvh ridge #61dfff;
     border-top: none;
     border-bottom: none;
     background: radial-gradient(#ffffffdd 60%, #ffffff00);
@@ -193,25 +205,27 @@ ul {
 }
 
 #create-link:hover {
-    filter: drop-shadow(0 0 .5dvh #000000);
+    filter: drop-shadow(0 0 .5dvh #87dbff);
     background: white;
+}
+
+#buttons-div {
+    display: flex;
+    margin-top: 2dvh;
 }
 
 #edit-button {
     border: .2dvh solid #986601;
     background: #ffff10;
-    transform: translate(40vh);
-    position: absolute;
-    translate: -25dvw 2dvh;
     padding: 1.1dvh;
+    margin-right: 1dvw;
 }
 
 #edit-button:hover {
-    filter: drop-shadow(0 0 .5dvh black);
+    filter: drop-shadow(0 0 1dvh #e3ff41);
 }
 
 #delete-button {
-    translate: 6dvw 2dvh;
     padding: 1dvh;
     font-family: "Baskervville SC", system-ui;
     font-size: 2.2dvh;
@@ -242,6 +256,22 @@ ul {
     filter: drop-shadow(0 0 1dvh #70ff41);
 }
 
+#add-button {
+    translate: 0 2dvh;
+    padding: 1dvh;
+    font-family: "Baskervville SC", system-ui;
+    font-size: 2.2dvh;
+    background: #61dfff;
+    color: black;
+}
+
+#add-button:hover {
+    filter: none;
+    cursor: pointer;
+    outline: none;
+    filter: drop-shadow(0 0 1dvh #87dbff);
+}
+
 #show-grid {
     display: grid;
     text-align: center;
@@ -252,4 +282,9 @@ ul {
     height: 20dvh;
     justify-self: center;
     border: .5dvh ridge #986601;
+}
+
+.name-text:hover {
+    background: none;
+    filter: none;
 }

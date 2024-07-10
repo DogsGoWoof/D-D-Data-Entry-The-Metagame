@@ -5,15 +5,19 @@
 
         <%- include('../partials/_navbar.ejs') %>
         <div id="border-d-scale"><div id="border-d"><div id="bordered-d"></div></div></div>
-        <h1><%= user.username %></h1>
-        <ul>
-        <% user.characters.forEach((character) => { %>
-            <div class="character-card">
-                <li class="text">
-                    <%= character.name %>
-                </li>
-            </div>
-        <% }); %>
+        <h1 class="header-one"><%= user.username %></h1>
+        <div id="content-container-top">
+            <ul>
+            <% user.characters.forEach((character) => { %>
+                <div class="character-card">
+                    <li class="name-text">
+                        <%= character.name %> |
+                        Level <%= character.level %>
+                    </li>
+                </div>
+            <% }); %>
+            </ul>
+        </div>
 
     </body>
 

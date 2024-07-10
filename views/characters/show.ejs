@@ -12,7 +12,7 @@
                 <% if (character.image) { %>
                     <img id="character-profile" src="<%= character.image %>" alt="character profile portrait">
                 <% } else { %>
-                    >>placeholder<<
+                    <img id="character-profile" src="https://em-content.zobj.net/source/microsoft/378/bust-in-silhouette_1f464.png" alt="character profile portrait placeholder">
                 <% } %>
                 <div>Class: <%= character.class %></div>
                 <div>Race: <%= character.race %></div>
@@ -24,10 +24,12 @@
             </div>
         </div> 
         <div class="show-actions">
-            <a id="edit-button" href="/users/<%= user._id %>/characters/<%= character._id %>/edit">Edit Character</a>
-            <form action="/users/<%= user._id %>/characters/<%= character._id %>?_method=DELETE" method="POST">
-                <button id="delete-button" type="submit">Delete Character</button>
-            </form>
+            <div id="buttons-div">
+                <a id="edit-button" href="/users/<%= user._id %>/characters/<%= character._id %>/edit">Edit Character</a>
+                <form action="/users/<%= user._id %>/characters/<%= character._id %>?_method=DELETE" method="POST">
+                    <button id="delete-button" type="submit">Delete Character</button>
+                </form>
+            </div>
         </div>
     </body>
 
