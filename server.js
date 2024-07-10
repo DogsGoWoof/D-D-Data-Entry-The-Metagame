@@ -41,16 +41,11 @@ app.use(
 app.use(passUserToView);
 
 app.get('/', async (req, res) => {
-    // console.log(user);
-    // Check if the user is logged in
     if (req.session.user) {
-        // Redirect logged-in users to their applications index
         const user = await User.findOne(req.session.user);
         req.session.user._id = user._id;
-        console.log(req.session.user._id);
         res.redirect(`/users/${req.session.user._id}/characters`);
     } else {
-        // Show the homepage for users who are not logged in
         res.render('index.ejs');
     }
 });
@@ -61,22 +56,6 @@ app.get('/', async (req, res) => {
 //         user: user,
 //     });
 // });
-
-app.get('/test', async (req, res) => {
-    const userTest2 = JSON.stringify(req.session.user);
-    const user3 = await User.findById('668c01221f5378afe3de5017');
-    const user4 = await User.findOne();
-    const test = String(userTest2);
-    res.render('test.ejs', {
-        userTest: req.session.user,
-        userTest2: userTest2,
-        words: "words",
-        test: test,
-        user3: user3,
-        user4: user4,
-        // fix user._id issue of not getting stored in session
-    });
-});
 
 app.use("/auth", authController);
 app.use(isSignedIn);

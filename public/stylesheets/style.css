@@ -18,11 +18,11 @@ body {
 
 nav {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
-    border: 1dvh ridge crimson;
-    border-top: .1dvh ridge peru;
-    border-bottom: .1dvh ridge peru;
+    border: 1dvh ridge #986601;
+    border-top: .1dvh ridge chartreuse;
+    border-bottom: .1dvh ridge chartreuse;
     border-radius: 100dvh;
     padding: 1dvh;
     background: #dddddd;
@@ -54,11 +54,15 @@ a {
 
 #content-container-top {
     align-self: center;
-    background: #dddddddd;
+    background: radial-gradient(#D1E9D0, #d1e9d044);
     padding: 1dvh;
     font-weight: bold;
     margin: 5dvh 0 0 0;
     padding: 2dvh 4dvh;
+    border-radius: 2dvh;
+    border: 1.5dvh ridge #986601;
+    border-top: none;
+    border-bottom: none;
 }
 
 #sign {
@@ -66,28 +70,186 @@ a {
     align-content: end;
     flex-flow: column wrap;
     margin: 3dvh 0;
-    height: 50dvh;
-    padding: 0dvh 10dvw;
+    /* height: 50dvh; */
+    padding: 5dvh 5dvw;
+    border: 1dvh ridge #000;
+    border-top: none;
+    border-bottom: none;
+    border-radius: 5dvh;
+    background: #fff2;
 }
 
 .sign-form {
     margin: 3dvh 0;
+    border-left: .3dvh ridge #000;
+    border-radius: 5dvh;
+    padding: 1dvh 1dvh;
+}
+
+.character-form {
+    display: grid;
 }
 
 button {
     margin: 0 auto;
     display: block;
+    color: white;
+    font-weight: bold;
+    padding: .5dvh;
+    background-color: black;
 }
 
 button:hover {
-    filter: brightness(90%);
+    filter: invert(90%);
+    outline: .5dvh solid white;
 }
 
 input {
     background: #DEE5FF;
     float: right;
+    padding: .2dvh .5dvw;
+    font-weight: bold;
+}
+
+input:focus {
+    background: white;
 }
 
 label {
     margin-right: .5dvw;
+}
+
+#border-d {
+    border: 2dvh double #000;
+    height: 30dvh;
+    aspect-ratio: .8;
+    border-radius: 0 100dvh 100dvh 0;
+    margin: 6dvh;
+    padding-top: 1dvh;
+    background: conic-gradient(from -45deg, #ff62008a, #5a3d02a4);
+    transition: all 1s linear;
+}
+
+#border-d:hover {
+    filter: hue-rotate(360deg);
+}
+
+#bordered-d {
+    border: 2dvh double #000;
+    height: 70%;
+    aspect-ratio: .8;
+    border-radius: 0 100dvh 100dvh 0;
+    margin: 3dvh;
+    background: conic-gradient(from 45deg, #80ff00ca, rgba(255, 255, 255, 0.403));
+}
+
+#border-d-scale {
+    scale: .3;
+    position: fixed;
+    top: -2dvh;
+}
+
+#troll:hover {
+    rotate: 45deg;
+    cursor: none;
+}
+
+#elf:hover {
+    translate: 0 -1dvh;
+    cursor: none;
+}
+ul {
+    display: flex;
+    justify-content: space-between;
+    list-style-type: upper-roman;
+}
+
+.character-li {
+    margin-right: 8dvh;
+    border: .4dvh groove #039f03;
+    border-top: none;
+    border-bottom: none;
+    padding: .4dvh 1dvh;
+    border-radius: 5dvh;
+}
+
+.character-li:hover {
+    background: conic-gradient(from -135deg at 50% 50%, #D1E9D0, #a77f30);
+    filter: drop-shadow(0 0 .5dvh #000000);
+}
+
+#create-div {
+    margin: 3dvh 0 6dvh 0;
+    width: fit-content;
+}
+
+#create-link {
+    border: .5dvh ridge lightblue;
+    border-top: none;
+    border-bottom: none;
+    background: radial-gradient(#ffffffdd 60%, #ffffff00);
+    border-radius: 5dvh;
+    padding: 2dvh;
+}
+
+#create-link:hover {
+    filter: drop-shadow(0 0 .5dvh #000000);
+    background: white;
+}
+
+#edit-button {
+    border: .2dvh solid #986601;
+    background: #ffff10;
+    transform: translate(40vh);
+    position: absolute;
+    translate: -25dvw 2dvh;
+    padding: 1.1dvh;
+}
+
+#edit-button:hover {
+    filter: drop-shadow(0 0 .5dvh black);
+}
+
+#delete-button {
+    translate: 6dvw 2dvh;
+    padding: 1dvh;
+    font-family: "Baskervville SC", system-ui;
+    font-size: 2.2dvh;
+    background: red;
+    color: black;
+}
+
+#delete-button:hover {
+    filter: none;
+    cursor: pointer;
+    outline: none;
+    filter: drop-shadow(0 0 .5dvh black);
+}
+
+#update-button {
+    translate: 0 2dvh;
+    padding: 1dvh;
+    font-family: "Baskervville SC", system-ui;
+    font-size: 2.2dvh;
+    background: chartreuse;
+    color: black;
+}
+
+#update-button:hover {
+    filter: none;
+    cursor: pointer;
+    outline: none;
+    filter: drop-shadow(0 0 1dvh #70ff41);
+}
+
+#show-grid {
+    display: grid;
+    text-align: center;
+}
+
+#character-profile {
+    aspect-ratio: 1;
+    height: 20dvh;
+    justify-self: center;
+    border: .5dvh ridge #986601;
 }

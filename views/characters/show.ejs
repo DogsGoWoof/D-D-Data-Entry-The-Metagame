@@ -5,25 +5,28 @@
 
     <body>
         <%- include('../partials/_navbar.ejs') %>
-        <h1><%= character.name %></h1>
+        <div id="border-d-scale"><div id="border-d"><div id="bordered-d"></div></div></div>
+        <h1 class="header-one"><%= character.name %></h1>
         <div class="content-container">
-            <% if (character.image) { %>
-                <%= character.image %>
-            <% } else { %>
-                >>placeholder<<
-            <% } %>
-            <div><%= character.class %></div>
-            <div><%= character.race %></div>
-            <div><%= character.alignment %></div>
-            <div><%= character.level %></div>
-            <div><%= character.background %></div>
-            <div><%= character.experience %></div>
-            <div><%= character.notes %></iv>
+            <div id="show-grid">
+                <% if (character.image) { %>
+                    <img id="character-profile" src="<%= character.image %>" alt="character profile portrait">
+                <% } else { %>
+                    >>placeholder<<
+                <% } %>
+                <div>Class: <%= character.class %></div>
+                <div>Race: <%= character.race %></div>
+                <div>Alignment: <%= character.alignment %></div>
+                <div>Level: <%= character.level %></div>
+                <div>Background: <%= character.background %></div>
+                <div>Experience: <%= character.experience %></div>
+                <div>Notes: <%= character.notes %></iv>
+            </div>
         </div> 
         <div class="show-actions">
-            <a href="/users/<%= user._id %>/characters/<%= character._id %>/edit">Edit Character</a>
+            <a id="edit-button" href="/users/<%= user._id %>/characters/<%= character._id %>/edit">Edit Character</a>
             <form action="/users/<%= user._id %>/characters/<%= character._id %>?_method=DELETE" method="POST">
-                <button type="submit">Delete Character</button>
+                <button id="delete-button" type="submit">Delete Character</button>
             </form>
         </div>
     </body>

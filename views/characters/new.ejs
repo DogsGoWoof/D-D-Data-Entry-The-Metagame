@@ -5,9 +5,10 @@
 
     <body>
         <%- include('../partials/_navbar.ejs') %>
-        <h1>New Character</h1>
+        <div id="border-d-scale"><div id="border-d"><div id="bordered-d"></div></div></div>
+        <h1 class="header-one">New Character</h1>
         <div class="content-container">
-            <form action="/users/<%= user._id %>/characters" method="POST">
+            <form class="character-form" action="/users/<%= user._id %>/characters" method="POST">
                 <label for="name">Name: </label>
                 <input type="text" name="name" id="name" required />
                 <label for="class">Class: </label>

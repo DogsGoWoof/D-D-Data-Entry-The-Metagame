@@ -5,9 +5,10 @@
 
     <body>
         <%- include('../partials/_navbar.ejs') %>
-        <h1>Edit Character</h1>
+        <div id="border-d-scale"><div id="border-d"><div id="bordered-d"></div></div></div>
+        <h1 class="header-one">Edit Character</h1>
         <div class="content-container">
-            <form action="/users/<%= user._id %>/characters/<%= character._id %>?_method=PUT" method="POST">
+            <form class="character-form" action="/users/<%= user._id %>/characters/<%= character._id %>?_method=PUT" method="POST">
                 <label for="name">Name: </label>
                 <input type="text" name="name" id="name" value="<%= character.name %>" required />
                 <label for="class">Class: </label>
@@ -26,7 +27,7 @@
                 <input type="text" name="image" id="image" value="<%= character.image %>" />
                 <label for="notes">Notes: </label>
                 <textarea name="notes" id="notes"><%= character.notes %> </textarea>
-                <button type="submit"><div class="link-div">Update</div></button>
+                <button id="update-button" type="submit"><div class="link-div">Update</div></button>
             </form>
         </div>
     </body>

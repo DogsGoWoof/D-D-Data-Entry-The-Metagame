@@ -6,16 +6,17 @@
     <body>
 
         <%- include('../partials/_navbar.ejs') %>
+        <div id="border-d-scale"><div id="border-d"><div id="bordered-d"></div></div></div>
         <h1 class="header-one">Sign in</h1>
         <div id="sign">
             <form action="/auth/sign-in" method="POST">
                 <div class="sign-form">
                     <label for="username">Username:</label>
-                    <input type="text" name="username" id="username" />
+                    <input type="text" name="username" id="username" required />
                 </div>
                 <div class="sign-form">
                     <label for="password">Password:</label>
-                    <input type="password" name="password" id="password" />
+                    <input type="password" name="password" id="password" required />
                 </div>
                 <div class="button">
                     <button type="submit">Sign in</button>
