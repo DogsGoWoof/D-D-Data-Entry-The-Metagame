@@ -6,29 +6,32 @@
     <body>
         <%- include('../partials/_navbar.ejs') %>
         <div id="border-d-scale"><div id="border-d"><div id="bordered-d"></div></div></div>
-        <h1 class="header-one"><%= character.name %></h1>
-        <div class="content-container">
-            <div id="show-grid">
-                <% if (character.image) { %>
-                    <img id="character-profile" src="<%= character.image %>" alt="character profile portrait">
-                <% } else { %>
-                    <img id="character-profile" src="https://em-content.zobj.net/source/microsoft/378/bust-in-silhouette_1f464.png" alt="character profile portrait placeholder">
-                <% } %>
-                <div>Class: <%= character.class %></div>
-                <div>Race: <%= character.race %></div>
-                <div>Alignment: <%= character.alignment %></div>
-                <div>Level: <%= character.level %></div>
-                <div>Background: <%= character.background %></div>
-                <div>Experience: <%= character.experience %></div>
-                <div>Notes: <%= character.notes %></iv>
-            </div>
-        </div> 
-        <div class="show-actions">
-            <div id="buttons-div">
-                <a id="edit-button" href="/users/<%= user._id %>/characters/<%= character._id %>/edit">Edit Character</a>
-                <form action="/users/<%= user._id %>/characters/<%= character._id %>?_method=DELETE" method="POST">
-                    <button id="delete-button" type="submit">Delete Character</button>
-                </form>
+        <% if (character) { %>
+            <h1 class="header-one"><%= character.name %></h1>
+            <div class="content-container">
+                <div id="show-grid">
+                    <% if (character.image) { %>
+                        <img id="character-profile" src="<%= character.image %>" alt="character profile portrait">
+                    <% } else { %>
+                        <img id="character-profile" src="https://em-content.zobj.net/source/microsoft/378/bust-in-silhouette_1f464.png" alt="character profile portrait placeholder">
+                    <% } %>
+                    <div>Class: <%= character.class %></div>
+                    <div>Race: <%= character.race %></div>
+                    <div>Alignment: <%= character.alignment %></div>
+                    <div>Level: <%= character.level %></div>
+                    <div>Background: <%= character.background %></div>
+                    <div>Experience: <%= character.experience %></div>
+                    <div>Notes: <%= character.notes %></iv>
+                </div>
+            </div> 
+            <div class="show-actions">
+                <div id="buttons-div">
+                    <a id="edit-button" href="/users/<%= user._id %>/characters/<%= character._id %>/edit">Edit Character</a>
+                    <form action="/users/<%= user._id %>/characters/<%= character._id %>?_method=DELETE" method="POST">
+                        <button id="delete-button" type="submit">Delete Character</button>
+                    </form>
+                    
+        <% } %>
             </div>
         </div>
     </body>
