@@ -25,3 +25,4 @@ A simple user database interface to keep track of all your characters and their 
 - Resource page to organize campaign resources (music, images, notes, recordings, ...)
 - Set a main character and/or active character status to display on users page
 - Party tool to create groups with other users
+- Character stat history to see how chracter changed over time (battle, levels, character development, ...)

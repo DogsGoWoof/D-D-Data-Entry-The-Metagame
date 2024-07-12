@@ -9,7 +9,6 @@ router.get('/', async (req, res) => {
         res.render('characters/index.ejs', {
             characters: currentUser.characters,
         });
-        // res.render('characters/index.ejs');
     } catch (error) {
         console.log(error)
         res.redirect('/')
@@ -29,7 +28,6 @@ router.post('/', async (req, res) => {
 });
 
 router.get('/new', async (req, res) => {
-    // const currentUser = await User.findById(req.session.user._id);
     res.render('characters/new.ejs');
 });
 

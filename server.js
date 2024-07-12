@@ -50,13 +50,6 @@ app.get('/', async (req, res) => {
     }
 });
 
-// app.get('/', async (req, res) => {
-//     const user = await User.findOne(req.session.user);
-//     res.render('index.ejs', {
-//         user: user,
-//     });
-// });
-
 app.use("/auth", authController);
 app.use(isSignedIn);
 app.use('/users/:userId/characters', charactersController);
